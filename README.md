@@ -8,6 +8,7 @@ This is a lcg random number generator, uses leapfrog method. It is OpenMP multip
 Running the program with different number of threads give the identical result:
 
 >[feng@]$  export OMP_NUM_THREADS=2
+>
 >[feng@]$  time ./pi_random_parallel.exe 
 >
 > 10000000 trials, pi = 3.141159 
@@ -16,6 +17,7 @@ Running the program with different number of threads give the identical result:
 >user	0m0.518s
 >sys	0m0.001s
 >[feng@]$  export OMP_NUM_THREADS=2
+>
 >[feng@]$  time ./pi_random_parallel.exe 
 >
 > 10000000 trials, pi = 3.141159 
@@ -24,6 +26,7 @@ Running the program with different number of threads give the identical result:
 >user	0m0.803s
 >sys	0m0.002s
 >[feng@]$  export OMP_NUM_THREADS=3
+>
 >[feng@]$  time ./pi_random_parallel.exe 
 >
 > 10000000 trials, pi = 3.141159 
@@ -32,6 +35,7 @@ Running the program with different number of threads give the identical result:
 >user	0m0.989s
 >sys	0m0.001s
 >[feng@]$  export OMP_NUM_THREADS=4
+>
 >[feng@]$  time ./pi_random_parallel.exe 
 >
  >10000000 trials, pi = 3.141159 
