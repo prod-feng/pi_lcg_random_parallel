@@ -37,7 +37,7 @@ int random(int num, double * ret)
 
      ret[j]=((double)rseed[j]/(double)PMOD);
    }
-   return num
+   return num;
 }
 
 void seed(unsigned long long *iseed)
