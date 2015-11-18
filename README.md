@@ -15,7 +15,9 @@ Running the program with different number of threads give the identical result:
 > 10000000 trials, pi = 3.141159 
 >
 >real	0m0.519s
+>
 >user	0m0.518s
+>
 >sys	0m0.001s
 >
 >[feng@]$  export OMP_NUM_THREADS=2
@@ -25,7 +27,9 @@ Running the program with different number of threads give the identical result:
 > 10000000 trials, pi = 3.141159 
 >
 >real	0m0.404s
+>
 >user	0m0.803s
+>
 >sys	0m0.002s
 >
 >[feng@]$  export OMP_NUM_THREADS=3
@@ -35,7 +39,9 @@ Running the program with different number of threads give the identical result:
 > 10000000 trials, pi = 3.141159 
 >
 >real	0m0.332s
+>
 >user	0m0.989s
+>
 >sys	0m0.001s
 >
 >[feng@]$  export OMP_NUM_THREADS=4
@@ -45,7 +51,9 @@ Running the program with different number of threads give the identical result:
  >10000000 trials, pi = 3.141159 
 >
 >real	0m0.342s
+>
 >user	0m1.354s
+>
 >sys	0m0.001s
 >
 >
