@@ -3,6 +3,8 @@ LCG LeapFrog random number generator, OpenMP multiple threads safe
 
 This is a lcg random number generator, uses leapfrog method. It is OpenMP multiple threads safe.
 
+It can gegerate 1, 2, or 3 independent random number series, which can be used to for 1D, 2D, and 3D random number generations.
+
 >gcc -fopenmp pi_random_parallel.c -lgomp -o pi_random_parallel.exe
 
 Running the program with different number of threads give the identical result:
