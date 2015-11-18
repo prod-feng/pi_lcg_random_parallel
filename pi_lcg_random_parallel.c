@@ -18,15 +18,14 @@ double xyz[DIMENSION];
 
 #pragma omp threadprivate(rseed,xyz)
 
-
-void random(int num, double * ret)
+int random(int num, double * ret)
 {
    unsigned long long random_next;
    int i,j;
-
+   if(num > DIMENSION) num = DIMENSION;
    int id=omp_get_thread_num();
 
-   for(j=0; j< DIMENSION; j++){
+   for(j=0; j< num; j++){
      //re-use the first random numbers generated for different threads.
      if(id > 0 && first[id][j][0] == 1){
        first[id][j][0]=0;
@@ -38,6 +37,7 @@ void random(int num, double * ret)
 
      ret[j]=((double)rseed[j]/(double)PMOD);
    }
+   return num
 }
 
 void seed(unsigned long long *iseed)
@@ -72,9 +72,10 @@ void seed(unsigned long long *iseed)
 static long num_trials = 10000;
 int main ()
 {
- unsigned long long myseed[3], setseed;
- long i; long Ncirc = 0; double pi, x, y;
-// int nthreads=0;
+ unsigned long long myseed[3];
+ long i; long Ncirc = 0; 
+ double pi, x, y;
+ int ndim=0;
 
  myseed[0]=123456789;
  myseed[1]=123456;
@@ -85,7 +86,7 @@ int main ()
      #pragma omp for
      for(i=0;i<num_trials; i++)
      {
-       random(2,xyz);
+       ndim = random(2,xyz);
        x=xyz[0];
        y=xyz[1];
        if (( x*x + y*y) <= 1.0) Ncirc++;
